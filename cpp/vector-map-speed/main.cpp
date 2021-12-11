@@ -24,9 +24,10 @@ string random_string()
 
 void main_str()
 {
+	cout << "=========== string keys of length 32 ============" << endl;
 	size_t hit_cnt = 0;
 	for(unsigned n : {10, 100, 1000, 10000, 100000}) {
-		cout << "=========== string count: " << n << "============" << endl;
+		cout << "------------- container size: " << n << endl;
 		vector<string> vector;
 		map<string, unsigned> tree_map;;
 		unordered_map<string, unsigned> hash_map;
@@ -76,11 +77,12 @@ void main_str()
 
 void main_int()
 {
+	cout << "=========== u32 keys ============" << endl;
 	random_device rd;
 	mt19937 generator(rd());
 	size_t hit_cnt = 0;
-	for(unsigned n : {10, 100, 1000, 10000, 50000}) {
-		cout << "=========== key count: " << n << "============" << endl;
+	for(unsigned n : {10, 100, 1000, 10000, 100000}) {
+		cout << "------------- container size: " << n << endl;
 		vector<Key> vector;
 		map<Key, unsigned> tree_map;;
 		unordered_map<Key, unsigned> hash_map;

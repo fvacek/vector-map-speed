@@ -4,9 +4,10 @@ use std::collections::{BTreeMap, HashMap};
 use std::time::{Instant};
 
 fn main() {
+    println!("=========== string keys of length 32 ============");
     let mut hit_cnt: usize = 0;
     for n in vec![10, 100, 1000, 10_000, 100_000] {
-        println!("=========== string count: {} ============", n);
+        println!("-------------- container size: {}", n);
         let mut vector: Vec<String> = vec![];
         let mut tree_map: BTreeMap<String, ()> = BTreeMap::new();
         let mut hash_map: HashMap<String, ()> = HashMap::new();
@@ -25,7 +26,7 @@ fn main() {
                 }
             }
             let duration = start.elapsed();
-            println!("Vector1 seek time elapsed:  {:?}", duration / n as u32);
+            println!("Vector seek time elapsed:   {:?}", duration / n as u32);
         }
         {
             let start = Instant::now();
